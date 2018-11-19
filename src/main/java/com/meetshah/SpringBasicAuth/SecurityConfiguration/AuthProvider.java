@@ -28,7 +28,8 @@ public class AuthProvider implements AuthenticationProvider {
 
 		AuthenticatedUser authenticatedUser =
 				new AuthenticatedUser(username, password, authenticationInfo.isAuthenticated());
-		return new UsernamePasswordAuthenticationToken(authenticatedUser, authentication.getCredentials().toString());
+		return new UsernamePasswordAuthenticationToken(authenticatedUser, authentication.getCredentials().toString(),
+				authenticatedUser.getAuthorities());
 	}
 
 	/*
